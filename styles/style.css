@@ -183,3 +183,6 @@ hr {
   text-align: end;
   font-size: 2rem;
 }
+.result-container {
+ margin-top: -1.5rem;
+}
