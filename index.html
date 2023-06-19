@@ -51,7 +51,11 @@
           </div>
         </div>
         <div class="bottom-container-top">
-          <h1 class="value-calculation" id="calculation">0</h1>
+          <h1 class="value-calculation">
+            <span id="calculation"
+              ><span id="symbol"></span><span id="calculation2"></span
+            ></span>
+          </h1>
           <br />
           <p class="history" id="result">0</p>
         </div>
@@ -61,7 +65,14 @@
         <div class="btn-main-container">
           <div class="row-btn-container">
             <div class="btn">
-              <button class="btn-btn orange size-font" type="button">AC</button>
+              <button
+                class="btn-btn orange size-font"
+                type="button"
+                onclick="eraseEverything()"
+                id="changeAlpha"
+              >
+                AC
+              </button>
             </div>
             <div class="btn">
               <button class="btn-btn svg-orange" type="button">
@@ -81,13 +92,31 @@
           </div>
           <div class="row-btn-container">
             <div class="btn">
-              <button class="btn-btn white" type="button">7</button>
+              <button
+                class="btn-btn white"
+                type="button"
+                onclick="buttonClick(7)"
+              >
+                7
+              </button>
             </div>
             <div class="btn">
-              <button class="btn-btn white" type="button">8</button>
+              <button
+                class="btn-btn white"
+                type="button"
+                onclick="buttonClick(8)"
+              >
+                8
+              </button>
             </div>
             <div class="btn">
-              <button class="btn-btn white" type="button">9</button>
+              <button
+                class="btn-btn white"
+                type="button"
+                onclick="buttonClick(9)"
+              >
+                9
+              </button>
             </div>
             <div class="btn">
               <button class="btn-btn orange size-increase" type="button">
@@ -97,13 +126,31 @@
           </div>
           <div class="row-btn-container">
             <div class="btn">
-              <button class="btn-btn white" type="button">4</button>
+              <button
+                class="btn-btn white"
+                type="button"
+                onclick="buttonClick(4)"
+              >
+                4
+              </button>
             </div>
             <div class="btn">
-              <button class="btn-btn white" type="button">5</button>
+              <button
+                class="btn-btn white"
+                type="button"
+                onclick="buttonClick(5)"
+              >
+                5
+              </button>
             </div>
             <div class="btn">
-              <button class="btn-btn white" type="button">6</button>
+              <button
+                class="btn-btn white"
+                type="button"
+                onclick="buttonClick(6)"
+              >
+                6
+              </button>
             </div>
             <div class="btn">
               <button class="btn-btn orange size-increase" type="button">
@@ -113,16 +160,39 @@
           </div>
           <div class="row-btn-container">
             <div class="btn">
-              <button class="btn-btn white" type="button">1</button>
+              <button
+                class="btn-btn white"
+                type="button"
+                id="btnOne"
+                onclick="buttonClick(1)"
+              >
+                1
+              </button>
             </div>
             <div class="btn">
-              <button class="btn-btn white" type="button">2</button>
+              <button
+                class="btn-btn white"
+                type="button"
+                onclick="buttonClick(2)"
+              >
+                2
+              </button>
             </div>
             <div class="btn">
-              <button class="btn-btn white" type="button">3</button>
+              <button
+                class="btn-btn white"
+                type="button"
+                onclick="buttonClick(3)"
+              >
+                3
+              </button>
             </div>
             <div class="btn">
-              <button class="btn-btn orange size-increase" type="button">
+              <button
+                class="btn-btn orange size-increase"
+                type="button"
+                onclick="additionValue()"
+              >
                 +
               </button>
             </div>
@@ -136,7 +206,13 @@
               </button>
             </div>
             <div class="btn">
-              <button class="btn-btn white" type="button">0</button>
+              <button
+                class="btn-btn white"
+                type="button"
+                onclick="buttonClick(0)"
+              >
+                0
+              </button>
             </div>
             <div class="btn">
               <button class="btn-btn white" type="button">.</button>
