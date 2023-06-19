@@ -3,6 +3,7 @@ let calcInput1 = document.getElementById(`calculation`);
 let calcInput2 = document.getElementById(`calculation2`);
 let symbolCalc = document.getElementById(`symbol`);
 let calcResult = document.getElementById(`result`);
+let floatPointEl = document.getElementById(`floatPoint`);
 
 //buttons
 
@@ -22,13 +23,8 @@ let arg1;
 let arg2;
 let multiDigits;
 let multiDigits2;
-// function buttonClick(arg1) {
-//   document.getElementById(`calculation`).textContent = `${arg1}`;
-// }
-// function buttonClick(arg1) {
-//   let multiDigits = document.getElementById("calculation").textContent;
-//   document.getElementById("calculation").textContent = multiDigits + arg1;
-// }
+let finalResult;
+
 function eraseEverything() {
   document.getElementById(`calculation`).textContent = ``;
   document.getElementById(`calculation2`).textContent = ``;
@@ -72,24 +68,42 @@ function buttonClick(arg1) {
     document.getElementById("calculation2").textContent = multiDigits2 + arg1;
     multiDigits2 += arg1;
     calcResult.textContent = Number(multiDigits) - Number(multiDigits2);
+  } else if(symbolCalc.textContent === "÷"){
+    document.getElementById("calculation2").textContent = multiDigits2 + arg1;
+    multiDigits2 += arg1;
+    calcResult.textContent = Number(multiDigits) / Number(multiDigits2);
+
+  } else if (symbolCalc.textContent === "%") {
+    document.getElementById("calculation2").textContent = multiDigits2 + arg1;
+    multiDigits2 += arg1;
+    let percentage = Number(multiDigits2) / 100; 
+    calcResult.textContent = percentage;
   }
   else {
     document.getElementById("calculation").textContent = multiDigits + arg1;
     multiDigits += arg1;
   }
 
-
-
-
-
-
-
-
 }
 
-function biggerText(){
-  let calcResult = document.getElementById(`result`);
-  calcResult.textContent = `= ${calcResult.textContent}`;
+
+
+
+
+
+
+
+
+function biggerText() {
+  let calcResult = document.getElementById("result");
+  finalResult = calcResult.textContent;
+  
+
+  if (!finalResult.startsWith("=")) {
+    finalResult = `= ${finalResult}`;
+    calcResult.textContent = finalResult;
+  }
+  
   calcResult.style.fontSize = "3rem";
 }
 
@@ -101,71 +115,10 @@ function biggerText(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function buttonClick(arg1) {
-//   document.getElementById("changeAlpha").textContent = "C";
-//   let multiDigits = document.getElementById("calculation").textContent; // Declare multiDigits as a local variable
-//   if (multiDigits === "0") {
-//     document.getElementById("calculation").textContent = arg1;
-//     multiDigits = arg1; // Update multiDigits with the clicked number
-//   } else {
-//     document.getElementById("calculation").textContent = Number(
-//       multiDigits + arg1
-//     );
-//     multiDigits += arg1; // Update multiDigits by concatenating the clicked number
-//   }
-//   console.log(multiDigits);
-// }
-
-// function buttonClick(arg2) {
-//   document.getElementById("changeAlpha").textContent = "C";
-//   let multiDigits2 = document.getElementById("calculation2").textContent; // Declare multiDigits as a local variable
-//   if (multiDigits2 === "0") {
-//     document.getElementById("calculation2").textContent = arg2;
-//     multiDigits2 = arg2; // Update multiDigits with the clicked number
-//   } else {
-//     document.getElementById("calculation2").textContent = Number(
-//       multiDigits2 + arg2
-//     );
-//     multiDigits2 += arg2; // Update multiDigits by concatenating the clicked number
-//   }
-//   console.log(multiDigits2);
-// }
-
-// function additionValue(multiDigits, multiDigits2) {
-//   buttonClick(arg1);
-//   buttonClick(arg2);
-//   document.getElementById(`symbol`).textContent = `+`;
-//   document.getElementById(
-//     "calculation"
-//   ).textContent = `${multiDigits} + ${multiDigits2}`;
-//   let addValue = multiDigits + multiDigits2;
-//   return addValue;
-// }
 function additionValue(arg1) {
 
   document.getElementById(`symbol`).textContent = `+`;
- 
+  
 }
 
 function multiplicationValue(arg1) {
@@ -173,6 +126,26 @@ function multiplicationValue(arg1) {
 
 }
 
-function subtractionValue(){
+function subtractionValue(arg1){
   document.getElementById(`symbol`).textContent = `-`;
+}
+
+function divisionValue(arg1){
+  document.getElementById(`symbol`).textContent = `÷`;
+}
+
+function percentageCalc(arg1) {
+  document.getElementById(`symbol`).textContent = `%`;
+}
+
+
+function floatingPoint() {
+  let currentInput = calcInput1.textContent;
+  let currentInput2 = calcInput2.textContent;
+  
+  if (!currentInput.includes(".") && symbolCalc.textContent === "") {
+    calcInput1.textContent = currentInput + ".";
+  } else if (!currentInput2.includes(".") && symbolCalc.textContent !== "") {
+    calcInput2.textContent = currentInput2 + ".";
+  }
 }
