@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+:root {
+  --clr-sky-blue: #8ecae6ff;
+  --clr-blue-green: #219ebcff;
+  --clr-brussian-blue: #023047ff;
+  --clr-selective-yellow: #ffb703ff;
+  --clr-ut-orange: #fb8500ff;
+  --light-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+}
+body {
+  font-family: "Roboto", sans-serif;
+  min-width: 100vh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calc-container {
+  width: 30rem;
+  height: 48rem;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+.upper-container {
+  height: 50%;
+  /* background-color: aqua; */
+}
+hr {
+  border: none;
+  width: 88%;
+  margin: auto;
+  border-top: 0.2px solid #636363;
+}
+.button-lower-container {
+  height: 50%;
+}
+.btn-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.row-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4.5rem;
+}
+.btn {
+  width: 3rem;
+  height: 3rem;
+  background-color: white;
+  cursor: pointer;
+}
+.btn-btn {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.backspace {
+  width: 70%;
+  margin: auto;
+}
+.flip {
+  width: 70%;
+  margin: auto;
+}
+.orange {
+  color: #fc7138;
+}
+.svg-orange {
+  filter: invert(57%) sepia(18%) saturate(6176%) hue-rotate(337deg)
+    brightness(102%) contrast(98%);
+}
