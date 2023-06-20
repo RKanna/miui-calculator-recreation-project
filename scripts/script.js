@@ -9,16 +9,16 @@ let floatPointEl = document.getElementById(`floatPoint`);
 
 let buttonNumberOne = document.getElementById(`btnOne`);
 
-let numOne = 1;
-let numTwo = 2;
-let numThree = 3;
-let numFour = 4;
-let numFive = 5;
-let numSix = 6;
-let numSeven = 7;
-let numEight = 8;
-let numNine = 9;
-let numZero = 0;
+// let numOne = 1;
+// let numTwo = 2;
+// let numThree = 3;
+// let numFour = 4;
+// let numFive = 5;
+// let numSix = 6;
+// let numSeven = 7;
+// let numEight = 8;
+// let numNine = 9;
+// let numZero = 0;
 let arg1;
 let arg2;
 let multiDigits;
@@ -44,6 +44,9 @@ function buttonClick(arg1) {
   }
   console.log(multiDigits);
 }
+
+
+
 
 function buttonClick(arg1) {
   document.getElementById("changeAlpha").textContent = "C";
@@ -74,11 +77,15 @@ function buttonClick(arg1) {
     multiDigits2 += arg1;
     let percentage = Number(multiDigits2) / 100;
     calcResult.textContent = percentage;
-  } else {
+  }  else {
     document.getElementById("calculation").textContent = multiDigits + arg1;
     multiDigits += arg1;
   }
 }
+
+
+
+
 
 function biggerText() {
   let calcResult = document.getElementById("result");
@@ -93,23 +100,38 @@ function biggerText() {
 }
 
 function additionValue(arg1) {
-  document.getElementById(`symbol`).textContent = `+`;
+  // document.getElementById(`symbol`).textContent = `+`;
+  if (calcInput1.textContent !== "") {
+    document.getElementById(`symbol`).textContent = `+`;
+  }
 }
 
 function multiplicationValue(arg1) {
-  document.getElementById(`symbol`).textContent = `x`;
+  // document.getElementById(`symbol`).textContent = `x`;
+  if (calcInput1.textContent !== "") {
+    document.getElementById(`symbol`).textContent = `x`;
+  }
 }
 
 function subtractionValue(arg1) {
-  document.getElementById(`symbol`).textContent = `-`;
+  // document.getElementById(`symbol`).textContent = `-`;
+  if (calcInput1.textContent !== "") {
+    document.getElementById(`symbol`).textContent = `-`;
+  }
 }
 
 function divisionValue(arg1) {
-  document.getElementById(`symbol`).textContent = `÷`;
+  // document.getElementById(`symbol`).textContent = `÷`;
+  if (calcInput1.textContent !== "") {
+    document.getElementById(`symbol`).textContent = `÷`;
+  }
 }
 
 function percentageCalc(arg1) {
-  document.getElementById(`symbol`).textContent = `%`;
+  // document.getElementById(`symbol`).textContent = `%`;
+  if (calcInput1.textContent !== "") {
+    document.getElementById(`symbol`).textContent = `%`;
+  }
 }
 
 function floatingPoint() {
@@ -135,7 +157,11 @@ function backSpace() {
   } else if (currentInput1 !== "") {
     calcInput1.textContent = currentInput1.slice(0, -1);
     updateResult();
+    
+  } else {
+    eraseEverything();
   }
+  
 }
 
 function updateResult() {
@@ -158,3 +184,23 @@ function updateResult() {
     calcResult.textContent = "";
   }
 }
+
+document.addEventListener('keydown', function(event) {
+  const key = event.key;
+  
+  if (/[0-9]/.test(key)) {
+    buttonClick(key);
+  } else if (key === '+') {
+    additionValue();
+  } else if (key === '-') {
+    subtractionValue();
+  } else if (key === '*') {
+    multiplicationValue();
+  } else if (key === '/') {
+    divisionValue();
+  } else if(key === 'Enter'){
+    biggerText();
+  } else if(key === '.'){
+    floatingPoint();
+  }
+});
