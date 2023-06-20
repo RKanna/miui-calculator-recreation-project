@@ -52,16 +52,14 @@
         </div>
         <div class="bottom-container-top">
           <h1 class="value-calculation">
-            <span id="calculation"
-              ></span>
-              <span id="symbol"></span>
-              <span id="calculation2"></span
-            >
+            <span id="calculation"></span>
+            <span id="symbol"></span>
+            <span id="calculation2"></span>
           </h1>
           <br />
           <div class="result-container">
-          <p class="history" id="result">0</p>
-        </div>
+            <p class="history" id="result">0</p>
+          </div>
         </div>
       </div>
       <hr />
@@ -79,17 +77,32 @@
               </button>
             </div>
             <div class="btn">
-              <button class="btn-btn svg-orange" type="button">
+              <button
+                class="btn-btn svg-orange"
+                type="button"
+                onclick="backSpace()"
+                
+              >
                 <div class="backspace-container">
                   <img class="backspace" src="icons/orange-backspace.svg" />
                 </div>
               </button>
             </div>
             <div class="btn">
-              <button class="btn-btn orange weight" type="button" onclick="percentageCalc()">%</button>
+              <button
+                class="btn-btn orange weight"
+                type="button"
+                onclick="percentageCalc()"
+              >
+                %
+              </button>
             </div>
             <div class="btn">
-              <button class="btn-btn orange size-increase" type="button" onclick="divisionValue()">
+              <button
+                class="btn-btn orange size-increase"
+                type="button"
+                onclick="divisionValue()"
+              >
                 ÷
               </button>
             </div>
@@ -123,7 +136,11 @@
               </button>
             </div>
             <div class="btn">
-              <button class="btn-btn orange size-increase" type="button" onclick="multiplicationValue()">
+              <button
+                class="btn-btn orange size-increase"
+                type="button"
+                onclick="multiplicationValue()"
+              >
                 ×
               </button>
             </div>
@@ -157,7 +174,11 @@
               </button>
             </div>
             <div class="btn">
-              <button class="btn-btn orange size-increase" type="button" onclick="subtractionValue()">
+              <button
+                class="btn-btn orange size-increase"
+                type="button"
+                onclick="subtractionValue()"
+              >
                 -
               </button>
             </div>
@@ -219,10 +240,23 @@
               </button>
             </div>
             <div class="btn">
-              <button class="btn-btn white" type="button" onclick="floatingPoint()" id="floatPoint">.</button>
+              <button
+                class="btn-btn white"
+                type="button"
+                onclick="floatingPoint()"
+                id="floatPoint"
+              >
+                .
+              </button>
             </div>
             <div class="btn">
-              <button class="btn-btn orange-round" type="button" onclick="biggerText()">=</button>
+              <button
+                class="btn-btn orange-round"
+                type="button"
+                onclick="biggerText()"
+              >
+                =
+              </button>
             </div>
           </div>
         </div>
