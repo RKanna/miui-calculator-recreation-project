@@ -169,7 +169,7 @@ hr {
 }
 .bottom-container-top {
   width: 100%;
-  height: 8rem;
+  height: 12rem;
   padding: 0 2rem;
 }
 .value-calculation {
@@ -185,4 +185,7 @@ hr {
 }
 .result-container {
  margin-top: -1.5rem;
+}
+.bottom-container-top {
+  flex-wrap: wrap;
 }
